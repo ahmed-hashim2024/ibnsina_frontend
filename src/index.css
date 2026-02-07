@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+:root {
+  --color-brand-primary: #1a365d; /* كحلي فخم */
+  --color-brand-gold: #c5a059; /* ذهبي للمقاولات */
+  --font-cairo: "Cairo", sans-serif;
+}
+
+body {
+  font-family: var(--font-cairo);
+}
+
+/* Brand Utility Classes */
+.text-brand-primary {
+  color: var(--color-brand-primary);
+}
+.bg-brand-primary {
+  background-color: var(--color-brand-primary);
+}
+.border-brand-primary {
+  border-color: var(--color-brand-primary);
+}
+.hover\:bg-brand-primary:hover {
+  background-color: var(--color-brand-primary);
+}
+.hover\:text-brand-primary:hover {
+  color: var(--color-brand-primary);
+}
+
+.text-brand-gold {
+  color: var(--color-brand-gold);
+}
+.bg-brand-gold {
+  background-color: var(--color-brand-gold);
+}
+.border-brand-gold {
+  border-color: var(--color-brand-gold);
+}
+.hover\:bg-brand-gold:hover {
+  background-color: var(--color-brand-gold);
+}
+.hover\:text-brand-gold:hover {
+  color: var(--color-brand-gold);
+}
