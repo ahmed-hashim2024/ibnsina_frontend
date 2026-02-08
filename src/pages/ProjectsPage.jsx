@@ -25,6 +25,13 @@ const ProjectsPage = () => {
         // Handle paginated response from DRF
         const projectsList = data.results || data;
 
+        if (!Array.isArray(projectsList)) {
+          console.error("Invalid projects data format:", data);
+          setError("Invalid data received from server");
+          setLoading(false);
+          return;
+        }
+
         // Map backend data to frontend format
         const mappedProjects = projectsList.map((project) => ({
           id: project.id,
