@@ -1,23 +1,18 @@
 import React from "react";
-import { useLanguage } from "../context/LanguageContext";
-import translations from "../translations";
-import heroImage from "../assets/image/hero2.png"; // Assuming this exists based on search intent
+import { motion } from "framer-motion";
 
-const ProjectsHero = () => {
-  const { lang } = useLanguage();
-  const t = translations[lang] || translations["en"];
-
+const PageHero = ({ title, description, backgroundImage }) => {
   return (
     <section className="relative h-[60vh] md:h-[70vh] w-full overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
-          src={heroImage}
-          alt="Projects Hero"
+          src={backgroundImage}
+          alt={title}
           className="w-full h-full object-cover"
         />
         {/* Overlay */}
-        <div className="absolute inset-0 bg-black/60"></div>
+        <div className="absolute inset-0 bg-black/50"></div>
       </div>
 
       {/* Content Container */}
@@ -25,20 +20,22 @@ const ProjectsHero = () => {
         <div className="max-w-3xl text-white space-y-6 text-center mx-auto animate-in fade-in zoom-in-95 duration-1000">
           {/* Title */}
           <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold leading-tight drop-shadow-2xl">
-            {t.projectsPageTitle}
+            {title}
           </h1>
 
           {/* Divider */}
           <div className="h-1.5 w-24 bg-sky-500 rounded-full mx-auto"></div>
 
           {/* Description */}
-          <p className="text-lg md:text-xl md:leading-relaxed font-light text-gray-100 drop-shadow-md max-w-2xl mx-auto">
-            {t.projectsPageDesc}
-          </p>
+          {description && (
+            <p className="text-lg md:text-xl md:leading-relaxed font-light text-gray-100 drop-shadow-md max-w-2xl mx-auto">
+              {description}
+            </p>
+          )}
         </div>
       </div>
     </section>
   );
 };
 
-export default ProjectsHero;
+export default PageHero;

@@ -1,5 +1,6 @@
+import PageHero from "../components/common/PageHero";
 import ServicesData from "../components/servicesData";
-import ServicesHero from "../components/ServicesHero";
+import heroImage from "../assets/image/serviceHero.png";
 import service1 from "../assets/image/services1.png";
 import service2 from "../assets/image/services2.png";
 import service3 from "../assets/image/services3.png";
@@ -61,7 +62,11 @@ const ServicesPage = () => {
 
   return (
     <div>
-      <ServicesHero />
+      <PageHero
+        title={t.servicesHeroTitle}
+        description={t.servicesHeroDescription}
+        backgroundImage={heroImage}
+      />
       <ServicesData services={servicesData} />
       <AboutAsks />
       {/* Additional services content can be added here */}

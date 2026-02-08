@@ -3,7 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useLanguage } from "../context/LanguageContext";
 import translations from "../translations";
 import { getJob, submitCareerApplication } from "../services/api";
-import CareersHero from "../components/CareersHero";
+
 import {
   FaBriefcase,
   FaClock,

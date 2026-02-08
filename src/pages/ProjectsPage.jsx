@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useLanguage } from "../context/LanguageContext";
 import translations from "../translations";
-import ProjectsHero from "../components/ProjectsHero";
+import PageHero from "../components/common/PageHero";
+import heroImage from "../assets/image/hero2.png";
 import ProjectCard from "../components/ProjectCard";
 import { motion, AnimatePresence } from "framer-motion";
 import { getProjects } from "../services/api";
@@ -66,7 +67,11 @@ const ProjectsPage = () => {
 
   return (
     <div className="bg-white min-h-screen pb-20">
-      <ProjectsHero />
+      <PageHero
+        title={t.projectsPageTitle}
+        description={t.projectsPageDesc}
+        backgroundImage={heroImage}
+      />
 
       {/* === Filter Section === */}
       <section className="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">

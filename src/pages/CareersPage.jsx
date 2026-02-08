@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useLanguage } from "../context/LanguageContext";
 import translations from "../translations";
-import CareersHero from "../components/CareersHero";
+import PageHero from "../components/common/PageHero";
+import heroImage from "../assets/image/abouthero3.png";
 import { motion } from "framer-motion";
 import {
   FaBriefcase,
@@ -95,7 +96,11 @@ const CareersPage = () => {
 
   return (
     <div className="bg-white min-h-screen">
-      <CareersHero />
+      <PageHero
+        title={t.careersHeroTitle}
+        description={t.careersHeroDesc}
+        backgroundImage={heroImage}
+      />
 
       {/* === Values Section === */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
